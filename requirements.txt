@@ -1,0 +1,6 @@
+dash==2.15.0
+gunicorn
+dash-iconify==0.1.2
+dash-mantine-components==0.13.0a3
+mistune==3.0.2
+imagesize

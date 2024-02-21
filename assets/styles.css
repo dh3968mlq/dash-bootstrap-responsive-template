@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+
+:root {
+    --navbar-width: 300px;
+    --aside-width: 300px;
+    --header-height: 70px;
+    --footer-height: 40px;
+  }
+
+.page-header {
+  position: fixed;
+  height: var(--header-height);
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #DDDDDD;
+}
+
+/* Implements scrolling using dmc.ScrollArea */
+.page-navbar {
+  position: fixed;
+  width: var(--navbar-width);
+}
+
+/* Implements scrolling in CSS */
+/* Width must be specified in code */
+/* Also see code for how to position it between the header and footer */
+.page-navbar-drawer {
+  overflow: auto
+}
+
+.page-aside {
+  position: fixed;
+  width: var(--aside-width);
+  right: 0;
+}
+
+/* Implements scrolling in CSS */
+.page-body {
+  position: fixed;
+  left: var(--navbar-width); /* Position to right of navbar (~ left sidebar) */
+  right: var(--aside-width); /* Position to left of Aside (~right sidebar) */
+  /* Top and bottom must be specified here to position it between header and footer */
+  top: var(--header-height); /* Position below the Header */
+  bottom: var(--footer-height);
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: scroll;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  height: var(--header-height);
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #DDDDDD;
+}
+
+/* Hide (right-hand) Aside as page narrows */
+@media only screen and (max-width: 1500px) {
+  .page-aside {
+      display: none;
+  }
+  .page-body {
+      right: 0;
+  }
+}
+
+/* Hide (left-hand) Navbar as page narrows */
+@media only screen and (max-width: 1200px) {
+  .page-navbar {
+      display: none;
+  }
+  .page-body {
+      left: 0;
+  }
+}

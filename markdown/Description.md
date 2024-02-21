@@ -1,16 +1,14 @@
-# dash-mantine-starter-kit
+## Template description
 
-A starter template app for a responsive multi-page app using Dash Mantine components
+Author: David Harris 2024
 
-Author: David Harris 2024, based on Snehil Vijay's dmc-docs app at https://github.com/snehilvj/dmc-docs 
+Code on [Gitgub](https://github.com/dh3968mlq/dash-mantine-starter-kit)
 
 [Dash](https://dash.plotly.com/) allows [multi-page web apps](https://dash.plotly.com/)
 to be programmed (almost entirely) in Python
 
 [Dash Mantine Components](https://www.dash-mantine-components.com/)
 wraps the [Mantine](https://mantine.dev/) React components library
-
-This app is deployed on [Heroku](https://dash-mantine-boilerplate-19ffeb1d6cdb.herokuapp.com/). (It may take a few seconds to wake up)
 
 ### This template
 
@@ -30,3 +28,16 @@ This app is deployed on [Heroku](https://dash-mantine-boilerplate-19ffeb1d6cdb.h
     * This uses [DH's fork of markdown2dash](https://github.com/dh3968mlq/markdown2dash),
 included as a Git submodule at present
 * Is configured for deployment on Heroku
+
+### Outstanding challenges
+
+* Rendering from files held as static HTML
+* Exact vertical alignment if using an icon as a list item symbol
+
+### This page
+
+The content of this page is stored as *markdown/description.md* and is automatically 
+converted for display by *pages/autogenerate.py*, execution of which is 
+triggered on load by the Dash multi-page mechanism.
+
+
