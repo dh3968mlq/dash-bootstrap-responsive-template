@@ -2,52 +2,52 @@
 Home page
 Rendered by calls to dmc components
 '''
-from dash import register_page
-import dash_mantine_components as dmc
+from dash import register_page, html
+import dash_bootstrap_components as dbc
 from lib.lorem import lorem
 
-register_page(__name__, path='/', title='Dash Mantine Starter Kit') # https://dash.plotly.com/urls
+register_page(__name__, path='/', title='Dash Bootstrap Starter Kit') # https://dash.plotly.com/urls
 
-layout = dmc.Container( # One possible container for page content. Set fluid=True to avoid width restrictions
+layout = dbc.Container( 
     [
-        dmc.Title('Home page', order=1),
-        dmc.Text(
+        html.H1('Home page'),
+        html.P(
             [
                 'A template with boilerplate code for creating a basic website using',
-                ' Dash and Dash Mantine components. ',
-                dmc.Anchor('Code on Github', href="https://github.com/dh3968mlq/dash-mantine-starter-kit", target="_blank")
+                ' Dash and Dash Bootstrap components. ',
+                html.A('Code on Github', href="https://github.com/dh3968mlq/dash-bootstrap-starter-kit", target="_blank")
             ]
         ),
-        dmc.Title('Dash and Mantine Components', order=2),
-        dmc.Text(
+        html.H2('Dash and Bootstrap Components'),
+        html.P(
             [
-                dmc.Anchor('Dash', href="https://dash.plotly.com/", target="_blank"),
+                html.A('Dash', href="https://dash.plotly.com/", target="_blank"),
                 ' allows ',
-                dmc.Anchor('multi-page web apps', href="https://dash.plotly.com/urls", target="_blank"),
+                html.A('multi-page web apps', href="https://dash.plotly.com/urls", target="_blank"),
                 ' to be programmed (almost entirely) in Python'
             ]
         ),
-        dmc.Text(
+        html.P(
             [
-                dmc.Anchor('Dash Mantine Components', href="https://www.dash-mantine-components.com/", target="_blank"), 
+                html.A('Dash Bootstrap Components', href="https://dash-bootstrap-components.opensource.faculty.ai/", target="_blank"), 
                 ' wraps the ',
-                dmc.Anchor('Mantine', href="https://mantine.dev/", target="_blank"),
-                ' React components library'
+                html.A('Bootstrap', href="https://getbootstrap.com/docs/3.4/components/", target="_blank"),
+                ' components library'
             ]
         ),
-        dmc.Title('This page', order=2),
-        dmc.Text('Is implemented in Python, using dmc components'),
-        dmc.Text([
+        html.H2('This page'),
+        html.P('Is implemented in Python, using dbc components'),
+        html.P([
                 'See the ',
-                dmc.Anchor('description', href="/description"),
+                html.A('description', href="/description"),
                 ' page for more details about the template'
             ]
         ),
-        dmc.Divider(size=3),
-        dmc.Title("Long text to show scrolling", order=2),
+        html.Hr(),
+        html.H2("Long text to show scrolling"),
     ] + 
     [
-        dmc.Text(lorem) for i in range(20)
+        html.P(lorem) for i in range(20)
     ],
     fluid=True
 )

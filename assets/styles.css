@@ -9,15 +9,20 @@
 
 .page-header {
   position: fixed;
+  top: 0;
+  left:0;
+  width: 100vw;
   height: var(--header-height);
-  padding-left: 25px;
-  padding-right: 25px;
   background-color: #DDDDDD;
 }
 
 /* Implements scrolling using dmc.ScrollArea */
 .page-navbar {
   position: fixed;
+  left:0;
+  top: var(--header-height); 
+  bottom: var(--footer-height);
+  overflow :auto;
   width: var(--navbar-width);
 }
 
@@ -50,10 +55,20 @@
 .page-footer {
   position: fixed;
   bottom: 0;
-  height: var(--header-height);
-  padding-left: 25px;
-  padding-right: 25px;
+  left:0;
+  width: 100vw;
+  height: var(--footer-height);
   background-color: #DDDDDD;
+}
+
+/* https://www.w3schools.com/howto/howto_css_center-vertical.asp */
+/* This does not play well with className=ms-auto within a dbc.Stack */
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* Hide (right-hand) Aside as page narrows */
@@ -73,5 +88,14 @@
   }
   .page-body {
       left: 0;
+  }
+  .wide-only {
+    display: None
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .narrow-only {
+    display: None
   }
 }
