@@ -1,6 +1,6 @@
 '''
 Home page
-Rendered by calls to dmc components
+Rendered by calls to dbc components
 '''
 from dash import register_page, html
 import dash_bootstrap_components as dbc

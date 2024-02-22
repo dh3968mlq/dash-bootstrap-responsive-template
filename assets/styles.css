@@ -16,7 +16,6 @@
   background-color: #DDDDDD;
 }
 
-/* Implements scrolling using dmc.ScrollArea */
 .page-navbar {
   position: fixed;
   left:0;
@@ -24,27 +23,23 @@
   bottom: var(--footer-height);
   overflow :auto;
   width: var(--navbar-width);
-}
-
-/* Implements scrolling in CSS */
-/* Width must be specified in code */
-/* Also see code for how to position it between the header and footer */
-.page-navbar-drawer {
-  overflow: auto
+  padding-right: 10px;
 }
 
 .page-aside {
   position: fixed;
   width: var(--aside-width);
   right: 0;
+  top: var(--header-height); 
+  bottom: var(--footer-height);
+  overflow :auto;
+  padding-right: 10px;
 }
 
-/* Implements scrolling in CSS */
 .page-body {
   position: fixed;
   left: var(--navbar-width); /* Position to right of navbar (~ left sidebar) */
   right: var(--aside-width); /* Position to left of Aside (~right sidebar) */
-  /* Top and bottom must be specified here to position it between header and footer */
   top: var(--header-height); /* Position below the Header */
   bottom: var(--footer-height);
   padding-left: 15px;

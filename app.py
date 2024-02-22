@@ -11,8 +11,8 @@ import dash_bootstrap_components as dbc
 import gunicorn                         # Necessary for Heroku?
 from lib.applayout import get_layout
 
-#from lib import callback_close_drawer   # The import defines the callback, no need to reference it
-#from lib import callback_open_drawer
+from lib import callback_close_drawer   # The import defines the callback, no need to reference it
+from lib import callback_open_drawer
 
 app = Dash(
     __name__, 
