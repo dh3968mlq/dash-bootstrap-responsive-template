@@ -16,7 +16,7 @@
   background-color: #DDDDDD;
 }
 
-.page-navbar {
+.left-sidebar {
   position: fixed;
   left:0;
   top: var(--header-height); 
@@ -26,7 +26,7 @@
   padding-right: 10px;
 }
 
-.page-aside {
+.right-sidebar {
   position: fixed;
   width: var(--aside-width);
   right: 0;

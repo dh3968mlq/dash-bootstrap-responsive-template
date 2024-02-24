@@ -1,9 +1,11 @@
-from dash import html, dcc, dbc
+from dash import html, dcc, page_registry
+import dash_bootstrap_components as dbc
 from src.lorem import lorem
 
-def create_side_nav_content(nav_data):
+def create_side_nav_content():
     "Common content for both versions of side navbar"
-    nav_content = [html.Div(
+    nav_data = page_registry.values()
+    nav_content = (
         [
             html.H4("Navigation"),
             html.P("Auto-generated from the page registry, but appears in a rather random order"),
@@ -15,7 +17,7 @@ def create_side_nav_content(nav_data):
             html.H4("Long text to show scrolling"),
         ] + \
         [html.P(lorem) for _ in range(6)]
-    )]
+    )
     return nav_content
 
 # --------------------------------------------
@@ -47,17 +49,18 @@ def create_layout_structure(header_height=70, header_contents=html.H2("Header"),
         ]
 
     # Left sidebar (list) and the offcanvas that replaces it on a narrow screen
-        left_sidebar = [
-            html.Div(children=left_sidebar_contents, className="left-sidebar wide-only"),
-            dbc.Offcanvas(
-                id="components-navbar-drawer",
-                children=left_sidebar_contents,
-                className="left-sidebar narrow-only",
-                style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
-                    "top":f"{header_height}px",
-                    "bottom":f"{footer_height}px",
-                }
-            )]
+    left_sidebar = [
+        html.Div(children=left_sidebar_contents, className="left-sidebar wide-only"),
+        #dbc.Offcanvas(
+        #    id="components-navbar-drawer",
+        #    children=left_sidebar_contents,
+        #    className="left-sidebar narrow-only",
+        #    style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
+        #        "top":f"{header_height}px",
+        #        "bottom":f"{footer_height}px",
+        #    }
+        #)
+    ]
 
     # Right sidebar (list) 
     right_sidebar = [
@@ -65,7 +68,7 @@ def create_layout_structure(header_height=70, header_contents=html.H2("Header"),
     ]
 
     # Body (list)
-    body = html.Div(children=body_contents, className="page-body"),
+    body = [html.Div(children=body_contents, className="page-body")]
 
     # Footer (list) 
     if footer_contents is None:
@@ -79,8 +82,9 @@ def create_layout_structure(header_height=70, header_contents=html.H2("Header"),
         ]
 
     layout = dbc.Container(   
-        children= header + left_sidebar + right_sidebar + body + footer + \
-            [dcc.Location(id="main-url")],
+        children= html.Div(header + left_sidebar) # + right_sidebar + body + footer + \
+            #[dcc.Location(id="main-url")],
+            ,
         fluid=fluid,
     )
     return layout

@@ -61,11 +61,11 @@ def create_header():
         ]
     return header
 # --------------------------------------------
-def create_left_sidebar(nav_data):
+def create_left_sidebar():
     navbar = [
             html.H2("Left sidebar"),
             html.P("This sidebar is replaced with a pop-up drawer when screen width is below 1200px"),
-        ] + utils.create_side_nav_content(nav_data),
+        ] + utils.create_side_nav_content()
     return navbar
 # --------------------------------------------
 def create_right_sidebar():

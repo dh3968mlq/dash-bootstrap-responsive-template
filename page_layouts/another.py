@@ -1,9 +1,8 @@
 from dash import register_page, dcc
 from src.lorem import lorem
 
-register_page(__name__, title='Another Page')
-
-layout = dcc.Markdown('''
+def body():
+    layout = dcc.Markdown('''
 
 # This is another page
 
@@ -19,5 +18,6 @@ This is held as static content within this app
 ## Repeated text to show scrolling
 
 ''' + 
-" ".join([lorem + "\n\n" for _ in range(30)])
-)
+    " ".join([lorem + "\n\n" for _ in range(30)])
+    )
+    return layout

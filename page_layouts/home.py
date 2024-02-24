@@ -6,10 +6,8 @@ from dash import register_page, html
 import dash_bootstrap_components as dbc
 from src.lorem import lorem
 
-register_page(__name__, path='/', title='Dash Bootstrap Starter Kit') # https://dash.plotly.com/urls
-
-layout = dbc.Container( 
-    [
+def body():
+    layout = [
         html.H1('Home page'),
         html.P(
             [
@@ -45,9 +43,8 @@ layout = dbc.Container(
         ),
         html.Hr(),
         html.H2("Long text to show scrolling"),
-    ] + 
+    ] + \
     [
         html.P(lorem) for i in range(20)
-    ],
-    fluid=True
-)
+    ]
+    return body
