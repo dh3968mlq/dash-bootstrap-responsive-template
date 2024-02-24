@@ -1,5 +1,5 @@
 '''
-    Dash / Mantine boilerplate for a basic responsive multi-page app
+    Dash / Bootstrap boilerplate for a basic responsive multi-page app
     Author David Harris 2024 
     # -- ... based on https://github.com/snehilvj/dmc-docs, author Snehil Vijay
 '''
@@ -9,10 +9,10 @@ sys.path.append('./markdown2dash')
 from dash import Dash, page_registry
 import dash_bootstrap_components as dbc
 import gunicorn                         # Necessary for Heroku?
-from lib.applayout import get_layout
+from src.applayout import get_layout
 
-from lib import callback_close_drawer   # The import defines the callback, no need to reference it
-from lib import callback_open_drawer
+from src import callback_close_drawer   # The import defines the callback, no need to reference it
+from src import callback_open_drawer
 
 app = Dash(
     __name__, 

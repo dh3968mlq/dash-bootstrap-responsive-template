@@ -4,8 +4,8 @@ Some layout is defined in styles.css
 '''
 import dash_bootstrap_components as dbc
 from dash import page_container, dcc, html
-from lib.lorem import lorem
-from lib import utils
+from src.lorem import lorem
+from src import utils
 
 # -- Replicate variables (custom properties) defined in styles.css as required
 header_height = 70    

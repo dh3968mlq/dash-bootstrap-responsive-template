@@ -1,5 +1,5 @@
 from dash import register_page, dcc
-from lib.lorem import lorem
+from src.lorem import lorem
 
 register_page(__name__, title='Another Page')
 

@@ -1,5 +1,5 @@
 from dash import html, dcc
-from lib.lorem import lorem
+from src.lorem import lorem
 
 def create_side_nav_content(nav_data):
     "Common content for both versions of side navbar"
