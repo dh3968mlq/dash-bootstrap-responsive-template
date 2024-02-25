@@ -13,6 +13,7 @@ from src.applayout import get_layout
 
 from src import callback_close_drawer   # The import defines the callback, no need to reference it
 from src import callback_open_drawer
+from src import callback_button1
 
 app = Dash(
     __name__, 

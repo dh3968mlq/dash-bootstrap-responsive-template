@@ -75,7 +75,7 @@ def create_side_navbar(nav_data):
         [
             html.H2("Left sidebar"),
             html.P("This sidebar is replaced with a pop-up drawer when screen width is below 1200px"),
-        ] + utils.create_side_nav_content(nav_data),
+        ] + utils.create_side_nav_content(nav_data, idprefix="bar"),
         className="page-navbar",
         id="page-navbar"
     )
@@ -89,7 +89,7 @@ def create_navbar_drawer(nav_data):
             html.H2("Left side drawer"),
             html.P("Uses dbc.Offcanvas"),
             html.P("This drawer becomes available when screen width is below 1200px"),
-        ] + utils.create_side_nav_content(nav_data),
+        ] + utils.create_side_nav_content(nav_data, idprefix="drawer"),
         className="page-navbar-drawer narrow-only",
         style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
             "top":f"{header_height}px",
