@@ -3,9 +3,6 @@
     Author David Harris 2024 
     # -- ... based on https://github.com/snehilvj/dmc-docs, author Snehil Vijay
 '''
-import sys
-sys.path.append('./markdown2dash')
-
 from dash import Dash, page_registry
 import dash_bootstrap_components as dbc
 import gunicorn                         # Necessary for Heroku?
@@ -21,7 +18,7 @@ app = Dash(
     external_stylesheets=[
                     dbc.themes.BOOTSTRAP,  
                     'https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css',
-                    './local-styles.css'],
+    ],
 )
 app._favicon = "favicon.png"            # app.title must be set page by page
 server = app.server                     # Necessary for Heroku?

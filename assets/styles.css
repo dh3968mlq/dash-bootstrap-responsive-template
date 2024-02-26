@@ -25,6 +25,7 @@
   width: var(--navbar-width);
   padding-right: 10px;
   padding-left: 10px;
+  background-color: white; /* Needed for when a custom navbar overlays the standard one */
 }
 
 .page-aside {
@@ -47,6 +48,8 @@
   padding-left: 15px;
   padding-right: 15px;
   overflow: scroll;
+  z-index: 1020;   /* Needed for when children are positioned over the left sidebar */
+                   /* Must be less than --bs-offcanvas-zindex=1045      */
 }
 
 .page-footer {
