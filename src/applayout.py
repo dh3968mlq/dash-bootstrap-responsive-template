@@ -83,7 +83,7 @@ def create_side_navbar(nav_data):
 # --------------------------------------------
 def create_navbar_drawer(nav_data):
     drawer = dbc.Offcanvas(
-        id="components-navbar-drawer",
+        id="page-default-drawer",
         children=
         [
             html.H2("Left side drawer"),
