@@ -32,7 +32,6 @@ using dcc.Markdown()
             html.H2("Custom drawer"),
             html.P("Uses dbc.Offcanvas"),
         ], 
-        className="page-navbar-drawer narrow-only",
         style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
             "top":f"{header_height}px",
             "bottom":f"{footer_height}px",
