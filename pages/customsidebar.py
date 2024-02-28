@@ -44,7 +44,8 @@ Some content here is rendered from Markdown, some (such as the image below) in P
             html.H2("Custom pop-up"),
             html.P("This page has a custom left pop-up that replaces the default."),
             html.P("Uses dbc.Offcanvas"),
-        ], 
+            dcc.Link("Home", href="/"),
+        ],
         style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
             "top":f"{header_height}px",
             "bottom":f"{footer_height}px",
