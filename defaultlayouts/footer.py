@@ -1,9 +1,11 @@
 from dash import html
+import dash_bootstrap_components as dbc
 
 def create_footer():
-    footer = [
-        html.H4("Footer area",
+    footer = dbc.Stack(
+        children=html.H4("Footer area",
             style={"color":"black", "textDecoration":"none"},
-            className="vertical-center",)
-    ]
+            className="ms-2",
+        )
+    )
     return footer

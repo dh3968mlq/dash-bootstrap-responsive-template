@@ -3,8 +3,8 @@
 :root {
     --navbar-width: 300px;
     --aside-width: 300px;
-    --header-height: 70px;
-    --footer-height: 40px;
+    --header-height: 50px;
+    --footer-height: 30px;
   }
 
 .page-header {
@@ -25,7 +25,7 @@
   width: var(--navbar-width);
   padding-right: 10px;
   padding-left: 10px;
-  background-color: white; /* Needed for when a custom navbar overlays the standard one */
+  background-color: white; /* Needed for when a custom navbar overlays the default */
 }
 
 .page-aside {
@@ -37,6 +37,7 @@
   overflow :auto;
   padding-right: 10px;
   padding-left: 10px;
+  background-color: white; /* Needed for when a custom right sidebar overlays the default */
 }
 
 .page-body {
@@ -46,8 +47,9 @@
   top: var(--header-height); /* Position below the Header */
   bottom: var(--footer-height);
   padding-left: 15px;
-  padding-right: 15px;
-  overflow: scroll;
+  padding-right: 22px; /* Some space for the scroll bar */
+  /* margin-right: 20px;  */
+  overflow: auto;
   z-index: 1020;   /* Needed for when children are positioned over the left sidebar */
                    /* Must be less than --bs-offcanvas-zindex=1045      */
 }
@@ -59,16 +61,6 @@
   width: 100vw;
   height: var(--footer-height);
   background-color: #DDDDDD;
-}
-
-/* https://www.w3schools.com/howto/howto_css_center-vertical.asp */
-/* This does not play well with className=ms-auto within a dbc.Stack */
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 /* Hide (right-hand) Aside as page narrows */

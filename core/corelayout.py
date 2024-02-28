@@ -7,8 +7,8 @@ def createlayout(
         popupcontents=None,
         rightsidebarcontents=None,
         footercontents=None,
-        header_height=70,  
-        footer_height = 40
+        header_height=50,       # Must correspond to value set in styles.css
+        footer_height = 30      # Ditto
 ):
     layout = dbc.Container(   
         children= [

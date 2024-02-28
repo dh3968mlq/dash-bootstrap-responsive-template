@@ -4,6 +4,8 @@ Author: David Harris 2024
 
 Code on [Gitgub](https://github.com/dh3968mlq/dash-bootstrap-starter-kit)
 
+![Example image](/static/pexels-pixabay-147411_cropped.png)   
+
 [Dash](https://dash.plotly.com/) allows [multi-page web apps](https://dash.plotly.com/)
 to be programmed (almost entirely) in Python
 
@@ -22,6 +24,9 @@ wraps the [Bootstrap](https://getbootstrap.com/docs/3.4/components/) components 
     * The right sidebar disappears
     * The left sidebar is replaced by a pop-up drawer
     * The title becomes shorter and smaller
+* Allows flexible control of the sidebar content
+    * The left sidebar can share some, all or none of its content with the pop-up that replaces it on a small screen
+    * Pages can have customised left or right sidebars and/or pop-ups
 * Autogenerates content from Markdown files
 * Is configured for deployment on Heroku
 

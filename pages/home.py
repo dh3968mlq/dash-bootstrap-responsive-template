@@ -2,22 +2,30 @@
 Home page
 Rendered by calls to dbc components
 '''
-from dash import register_page, html
+from dash import register_page, html, dcc
 import dash_bootstrap_components as dbc
 from defaultlayouts.lorem import lorem
 
 register_page(__name__, path='/', title='Dash Bootstrap Starter Kit') # https://dash.plotly.com/urls
 
 layout = [
-        html.H1('Home page'),
-        html.P(
-            [
-                'A template with boilerplate code for creating a basic website using',
-                ' Dash and Dash Bootstrap components. ',
-                html.A('Code on Github', href="https://github.com/dh3968mlq/dash-bootstrap-starter-kit", target="_blank")
-            ]
+        dbc.Container(
+            [html.H3(
+                [
+                    'A responsive site template using',
+                    ' Dash and Dash Bootstrap Components. ',
+                ],
+                className="text-center"  # If using html.P... "fs-4 text-center"
+            ),
+            html.P(
+                dbc.Button('Code on Github', href="https://github.com/dh3968mlq/dash-bootstrap-starter-kit",
+                    target="_blank", color="primary"),
+                className="fs-4 text-center"
+            )],
+            fluid='lg'
         ),
-        html.H2('Dash and Bootstrap Components'),
+        html.Img(src="/static/pexels-pixabay-262367-cropped2.jpg",width="100%",
+                 className="mx-0 mb-3 rounded"),
         html.P(
             [
                 html.A('Dash', href="https://dash.plotly.com/", target="_blank"),
@@ -34,16 +42,23 @@ layout = [
                 ' components library'
             ]
         ),
-        html.H2('This page'),
+        html.H3('This page'),
         html.P('Is implemented in Python, using dbc components'),
         html.P([
                 'See the ',
-                html.A('description', href="/description"),
+                dcc.Link('description', href="/description"),
                 ' page for more details about the template'
             ]
         ),
+        html.H3('Some Stacking Elements'),
+        dbc.Row([   # https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/
+            dbc.Col(html.Div(html.H3("Item 1", className="mx-2"), className="bg-primary rounded-2"), lg=4 ),
+            dbc.Col(html.Div(html.H3("Item 2", className="mx-2"), className="bg-secondary rounded-2"), lg=4),
+            dbc.Col(html.Div(html.H3("Item 3", className="mx-2"), className="bg-info rounded-2"), lg=4),
+            ],
+        ),
         html.Hr(),
-        html.H2("Long text to show scrolling"),
+        html.H3("Long text to show scrolling"),
     ] + \
     [
         html.P(lorem) for i in range(20)

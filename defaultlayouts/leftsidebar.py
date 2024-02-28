@@ -10,7 +10,7 @@ def create_side_nav_content(idprefix:str=""):
     nav_data = page_registry.values()
     nav_content = [
             html.H4("Navigation"),
-            html.P("Auto-generated from the page registry, but appears in a rather random order"),
+            html.P("Auto-generated from the page registry"),
             html.Ul(
                 children=[create_side_navbar_link(entry) for entry in nav_data],
             )
@@ -18,7 +18,7 @@ def create_side_nav_content(idprefix:str=""):
         [   
             html.H4("Button with callback"),
             html.P("The callback must handle both the fixed navbar button id and the popup button id"),
-            dbc.Button("Press here", color="primary", id=f"{idprefix}-button1"),
+            dbc.Stack(dbc.Button("Press here", color="primary", id=f"{idprefix}-button1", className="mx-auto mb-3")),
             html.P("Button has not been pressed", id=f"{idprefix}-button1-count")
         ] + \
         [   
@@ -36,8 +36,11 @@ def create_side_navbar_link(nav_entry):
 # --------------------------------------------
 def create_side_navbar():
     contents = [
-            html.H2("Left sidebar"),
-            html.P("This sidebar is replaced with a pop-up drawer when screen width is below 1200px"),
+            html.H3("Left sidebar"),
+            html.P("This sidebar is replaced with a pop-up drawer (dbc.Offcanvas) when screen width is below 1200px"),
+            html.P("The sidebar and drawer can contain common content or different content. " + 
+                   "This text is in the sidebar only, and everything below is common between the sidebar and drawer."
+            ),
     ] + create_side_nav_content(idprefix="bar")
     return contents
 # --------------------------------------------

@@ -3,10 +3,9 @@
     Author David Harris 2024 
     # -- ... based on https://github.com/snehilvj/dmc-docs, author Snehil Vijay
 '''
-from dash import Dash, page_registry
+from dash import Dash
 import dash_bootstrap_components as dbc
 import gunicorn                         # Necessary for Heroku?
-#from src.applayout import get_layout
 from core import corelayout
 from defaultlayouts import header, leftsidebar, rightsidebar, footer
 
@@ -25,7 +24,6 @@ app = Dash(
 app._favicon = "favicon.png"            # app.title must be set page by page
 server = app.server                     # Necessary for Heroku?
 
-#app.layout = get_layout(page_registry.values())
 app.layout = corelayout.createlayout(
     headercontents=header.create_header(),
     leftsidebarcontents=leftsidebar.create_side_navbar(),

@@ -14,7 +14,7 @@ using dcc.Markdown()
                       
 This is held as static content within this app
                       
-![Example image](/static/sample_image.png)   
+![Example image](/static/pexels-pixabay-147411_cropped.png)   
                       
 ## Repeated text to show scrolling
 
