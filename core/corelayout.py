@@ -8,11 +8,38 @@ def createlayout(
         rightsidebarcontents=None,
         footercontents=None,
         header_height=50,       # Must correspond to value set in styles.css
-        footer_height = 30      # Ditto
-):
-    layout = dbc.Container(   
+        footer_height = 30,      # Ditto
+        ):
+    contents = [
+            html.Div(children=headercontents, className="page-header"),
+            html.Div(children=page_container, className="page-body"),
+            dcc.Location(id="main-url"),
+    ]
+
+    if leftsidebarcontents is not None:
+        contents.append(html.Div(children=leftsidebarcontents, className="page-navbar"))
+
+    if popupcontents is not None:
+        contents.append(dbc.Offcanvas(
+                id="page-default-drawer",
+                children=popupcontents,
+                style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
+                    "top":f"{header_height}px",
+                    "bottom":f"{footer_height}px",
+                }
+            )
+        )
+
+    if rightsidebarcontents is not None:
+        contents.append(html.Div(children=rightsidebarcontents, className="page-aside"))
+
+    if footercontents is not None:
+        contents.append(html.Div(children=footercontents, className="page-footer"))
+
+    """ layout = dbc.Container(   
         children= [
             html.Div(children=headercontents, className="page-header"),
+            html.Div(children=page_container, className="page-body"),
             html.Div(children=leftsidebarcontents, className="page-navbar"),
             dbc.Offcanvas(
                 id="page-default-drawer",
@@ -23,10 +50,10 @@ def createlayout(
                 }
             ),
             html.Div(children=rightsidebarcontents, className="page-aside"),
-            html.Div(children=page_container, className="page-body"),
             html.Div(children=footercontents, className="page-footer"),
             dcc.Location(id="main-url"),
         ],
         fluid=True,
-    )
+    ) """
+    layout = dbc.Container(children= contents)
     return layout

@@ -11,9 +11,16 @@ def create_side_nav_content(idprefix:str=""):
     nav_content = [
             html.H4("Navigation"),
             html.P("Auto-generated from the page registry"),
+            html.H5("Pages"),
             html.Ul(
-                children=[create_side_navbar_link(entry) for entry in nav_data],
-            )
+                children=[create_side_navbar_link(entry) for entry in nav_data
+                          if entry["path"][:7] != "/posts/" ],
+            ),
+            html.H5("Posts"),
+            html.Ul(
+                children=[create_side_navbar_link(entry) for entry in nav_data
+                          if entry["path"][:7] == "/posts/" ],
+            ),
         ] + \
         [   
             html.H4("Button with callback"),

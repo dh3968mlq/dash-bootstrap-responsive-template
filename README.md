@@ -10,7 +10,7 @@ to be programmed (almost entirely) in Python
 ### This template
 
 * Implements a basic responsive design
-* Is implemented entirely in Python (except for a one-line example of a Javascript clientside callback) using
+* Is implemented entirely in Python using
     * [Dash](https://dash.plotly.com/urls)
     * [Dash Pages](https://dash.plotly.com/urls) to create a multi-page app
     * [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/)
