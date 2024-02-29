@@ -11,7 +11,6 @@ from defaultlayouts import header, leftsidebar, rightsidebar, footer
 
 from core import callback_close_drawer   # The import defines the callback, no need to reference it
 from core import callback_open_drawer
-from defaultlayouts import callback_button1
 
 app = Dash(
     __name__, 

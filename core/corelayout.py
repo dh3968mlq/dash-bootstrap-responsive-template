@@ -12,7 +12,13 @@ def createlayout(
         ):
     contents = [
             html.Div(children=headercontents, className="page-header"),
-            html.Div(children=page_container, className="page-body"),
+            html.Div(
+                html.Div(
+                    children=page_container, 
+                    className="page-inner"     # To get the bottom padding right on a narrow screen. 
+                ), 
+                className="page-body"
+            ),
             dcc.Location(id="main-url"),
     ]
 
@@ -36,24 +42,5 @@ def createlayout(
     if footercontents is not None:
         contents.append(html.Div(children=footercontents, className="page-footer"))
 
-    """ layout = dbc.Container(   
-        children= [
-            html.Div(children=headercontents, className="page-header"),
-            html.Div(children=page_container, className="page-body"),
-            html.Div(children=leftsidebarcontents, className="page-navbar"),
-            dbc.Offcanvas(
-                id="page-default-drawer",
-                children=popupcontents,
-                style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
-                    "top":f"{header_height}px",
-                    "bottom":f"{footer_height}px",
-                }
-            ),
-            html.Div(children=rightsidebarcontents, className="page-aside"),
-            html.Div(children=footercontents, className="page-footer"),
-            dcc.Location(id="main-url"),
-        ],
-        fluid=True,
-    ) """
     layout = dbc.Container(children= contents)
     return layout

@@ -1,4 +1,5 @@
 from dash import html, dcc, page_registry
+from dash import callback, Output, Input, ctx
 import dash_bootstrap_components as dbc
 from defaultlayouts.lorem import lorem
 
@@ -58,3 +59,19 @@ def create_navbar_drawer(header_height=70, footer_height = 40):
             html.P("This drawer becomes available when screen width is below 1200px"),
     ] + create_side_nav_content(idprefix="drawer")
     return contents
+# --------------------------------------------
+# Callback handles and updates both the sidebar and drawer instances of the button and message
+@callback(    # https://dash.plotly.com/basic-callbacks
+    Output("bar-button1-count", "children"),
+    Output("drawer-button1-count", "children"),
+    Output("bar-button1","n_clicks"),
+    Output("drawer-button1","n_clicks"),
+    Input("bar-button1","n_clicks"),
+    Input("drawer-button1","n_clicks"),
+    prevent_initial_call=True,
+)
+def increment_button1_clicks(nclicks_bar, nclicks_drawer):
+    trigger = ctx.triggered_id
+    nclicks = nclicks_bar if trigger == "bar-button1" else nclicks_drawer
+    text = f"Button has been clicked {nclicks} times"
+    return text, text, nclicks, nclicks

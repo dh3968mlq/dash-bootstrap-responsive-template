@@ -2,12 +2,12 @@ from dash import register_page, dcc
 from defaultlayouts.lorem import lorem
 
 register_page(module=__name__,
-              name="Page rendered from Markdown",
-              title='Another Page')
+              name="Sample Page",
+              title='Sample Page')
 
 layout = dcc.Markdown('''
 
-# This is another page
+## Sample Page
 
 This page has been rendered from markdown 
 using dcc.Markdown()

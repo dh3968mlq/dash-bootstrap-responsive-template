@@ -1,7 +1,5 @@
 ## Template Description
 
-Author: David Harris 2024
-
 Code on [Gitgub](https://github.com/dh3968mlq/dash-bootstrap-starter-kit)
 
 ![Example image](/static/pexels-pixabay-147411_cropped.png)   

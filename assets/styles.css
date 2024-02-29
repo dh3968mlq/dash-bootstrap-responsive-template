@@ -14,6 +14,8 @@
   width: 100vw;
   height: var(--header-height);
   background-color: #DDDDDD;
+  z-index: 1021;   /* higher than page-body */
+  padding-right: 12px;   /* To avoid scrollbar on small screens */
 }
 
 .page-navbar {
@@ -61,6 +63,7 @@
   width: 100vw;
   height: var(--footer-height);
   background-color: #DDDDDD;
+  z-index: 1021;   /* higher than page-body */
 }
 
 /* Hide (right-hand) Aside as page narrows */
@@ -80,6 +83,11 @@
   }
   .page-body {
       left: 0;
+      position: absolute;  /* Use the browser's scrollbar on a mobile device or tablet */
+      overflow: visible;
+  }
+  .page-inner {
+    padding-bottom: var(--footer-height);
   }
   .wide-only {
     display: None
