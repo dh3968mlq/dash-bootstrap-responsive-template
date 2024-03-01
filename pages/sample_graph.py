@@ -1,10 +1,8 @@
 # -- From https://dash.plotly.com/tutorial
-# Import packages
 from dash import html, dash_table, dcc, callback, Output, Input, register_page, ctx
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
-from dash.dash_table.Format import Format
 
 register_page(module=__name__,
               name="Sample Graph",
@@ -50,9 +48,9 @@ layout = [
             ),
         ],), 
     ], className="page-body"),
-    # -- The custom pop-up drawer
+    # -- The custom pop-up drawer. Duplicates the radio buttons
     dbc.Offcanvas(
-        id={"type":"drawer", "page": __name__},
+        id={"type":"drawer", "page": __name__}, # Needed for the open/close callbacks
         children=
         [
             html.H2("Graph Controls"),
@@ -66,6 +64,7 @@ layout = [
     ),
 ]
 # -------------------------------------------------------
+# Handle radio buttons. Keep the two duplicates in sync
 @callback(
     Output('my-first-graph-final', 'figure'),
     Output('radio-buttons-final', 'value'),
@@ -78,16 +77,3 @@ def update_graph(col_body, col_popup):
     col_chosen = col_body if trigger == 'radio-buttons-final' else col_popup
     fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
     return fig, col_chosen, col_chosen
-
-@callback(
-    Output('col-datatable', 'className'),
-    Output('col-graph', 'className'),
-    Input('radio-graphselect', 'value')
-)
-def update_graph(graph_chosen):
-    if graph_chosen == "Barchart":
-        return "wide-only", ""
-    elif graph_chosen == "Table":
-        return "", "wide-only"
-    else:
-        raise ValueError

@@ -2,10 +2,9 @@
 auto generate pages from all .md files held in ./markdown
 '''
 from pathlib import Path
-from dash import register_page, dcc, html
-import importlib
+from dash import register_page, dcc
 
-# -- Create pages from markdown files
+# -- Create pages from markdown files in the posts folder
 files = Path("posts").glob("*.md")
 for file in files:
     filename = file.name[:-3]

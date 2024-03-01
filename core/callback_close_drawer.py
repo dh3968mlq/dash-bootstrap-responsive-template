@@ -1,6 +1,8 @@
-from dash import callback, Output, Input, clientside_callback, State, ALL
+from dash import Output, Input, clientside_callback, State, ALL
 
 # Close the sidebar drawer when a link is clicked (when the URL changes)
+# Custom drawers must be given an id {"type":"drawer", "page": ...}
+# https://dash.plotly.com/pattern-matching-callbacks
 clientside_callback(
     """
         function(href, custom_already_open) { 

@@ -50,7 +50,6 @@
   bottom: var(--footer-height);
   padding-left: 15px;
   padding-right: 22px; /* Some space for the scroll bar */
-  /* margin-right: 20px;  */
   overflow: auto;
   z-index: 1020;   /* Needed for when children are positioned over the left sidebar */
                    /* Must be less than --bs-offcanvas-zindex=1045      */
@@ -63,10 +62,10 @@
   width: 100vw;
   height: var(--footer-height);
   background-color: #DDDDDD;
-  z-index: 1021;   /* higher than page-body */
+  z-index: 1021;   /* higher than page-body, hich extends behinid the footer on a small screen */
 }
 
-/* Hide (right-hand) Aside as page narrows */
+/* Hide right sidebar as page narrows */
 @media only screen and (max-width: 1500px) {
   .page-aside {
       display: none;
@@ -76,14 +75,14 @@
   }
 }
 
-/* Hide (left-hand) Navbar as page narrows */
+/* Hide left sidebar as page narrows */
 @media only screen and (max-width: 1200px) {
   .page-navbar {
       display: none;
   }
   .page-body {
       left: 0;
-      position: absolute;  /* Use the browser's scrollbar on a mobile device or tablet */
+      position: absolute;  /* Use the browser's scrollbar on a small screen */
       overflow: visible;
   }
   .page-inner {

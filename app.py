@@ -1,7 +1,7 @@
 '''
     Dash / Bootstrap boilerplate for a basic responsive multi-page app
     Author David Harris 2024 
-    # -- ... based on https://github.com/snehilvj/dmc-docs, author Snehil Vijay
+    # -- ... originally based on https://github.com/snehilvj/dmc-docs, author Snehil Vijay
 '''
 from dash import Dash
 import dash_bootstrap_components as dbc

@@ -56,7 +56,6 @@ layout = [
             dbc.Col(html.Div(html.H3("Item 2", className="mx-2"), className="bg-secondary rounded-2"), lg=4),
             dbc.Col(html.Div(html.H3("Item 3", className="mx-2"), className="bg-info rounded-2"), lg=4),
             ],
-            #className="g-5",    # Use this for wider gaps between columns. Put a Div within each Col
         ),
         html.Hr(),
         html.H3("Long text to show scrolling"),
