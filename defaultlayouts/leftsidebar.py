@@ -3,7 +3,7 @@ from dash import callback, Output, Input, ctx
 import dash_bootstrap_components as dbc
 from defaultlayouts.lorem import lorem
 
-def create_side_nav_content(idprefix:str=""):
+def side_nav_content(idprefix:str=""):
     """
     Common content for both versions of side navbar
     idprefix, different between bar and drawer, must be used for all ids to avoid duplication errors
@@ -14,12 +14,12 @@ def create_side_nav_content(idprefix:str=""):
             html.P("Auto-generated from the page registry"),
             html.H5("Pages"),
             html.Ul(
-                children=[create_side_navbar_link(entry) for entry in nav_data
+                children=[side_navbar_link(entry) for entry in nav_data
                           if entry["path"][:7] != "/posts/" ],
             ),
             html.H5("Posts"),
             html.Ul(
-                children=[create_side_navbar_link(entry) for entry in nav_data
+                children=[side_navbar_link(entry) for entry in nav_data
                           if entry["path"][:7] == "/posts/" ],
             ),
         ] + \
@@ -36,29 +36,31 @@ def create_side_nav_content(idprefix:str=""):
     return nav_content
 
 # --------------------------------------------
-def create_side_navbar_link(nav_entry):
+def side_navbar_link(nav_entry):
     link = html.Li( 
             dcc.Link(nav_entry["name"], href=nav_entry["path"]),
         )
     return link
 # --------------------------------------------
-def create_side_navbar():
+def side_navbar():
     contents = [
             html.H3("Left sidebar"),
             html.P("This sidebar is replaced with a pop-up drawer (dbc.Offcanvas) when screen width is below 1200px"),
             html.P("The sidebar and drawer can contain common content or different content. " + 
                    "This text is in the sidebar only, and everything below is common between the sidebar and drawer."
             ),
-    ] + create_side_nav_content(idprefix="bar")
+    ] + side_nav_content(idprefix="bar")
     return contents
 # --------------------------------------------
-def create_navbar_drawer(header_height=70, footer_height = 40):
+def navbar_drawer(header_height=70, footer_height = 40):
     contents = [
-            html.H2("Left side drawer"),
             html.P("Uses dbc.Offcanvas"),
             html.P("This drawer becomes available when screen width is below 1200px"),
-    ] + create_side_nav_content(idprefix="drawer")
+    ] + side_nav_content(idprefix="drawer")
     return contents
+# --------------------------------------------
+def popup_title():
+    return "Left side popup"
 # --------------------------------------------
 # Callback handles and updates both the sidebar and drawer instances of the button and message
 @callback(    # https://dash.plotly.com/basic-callbacks

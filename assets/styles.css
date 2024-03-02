@@ -13,7 +13,7 @@
   left:0;
   width: 100vw;
   height: var(--header-height);
-  background-color: #DDDDDD;
+  background-color: var(--bs-primary);
   z-index: 1021;   /* higher than page-body */
   padding-right: 12px;   /* To avoid scrollbar on small screens */
 }
@@ -27,7 +27,7 @@
   width: var(--navbar-width);
   padding-right: 10px;
   padding-left: 10px;
-  background-color: white; /* Needed for when a custom navbar overlays the default */
+  background-color: var(--bs-body-bg); 
 }
 
 .page-aside {
@@ -39,7 +39,7 @@
   overflow :auto;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: white; /* Needed for when a custom right sidebar overlays the default */
+  background-color: var(--bs-body-bg); 
 }
 
 .page-body {
@@ -51,6 +51,7 @@
   padding-left: 15px;
   padding-right: 22px; /* Some space for the scroll bar */
   overflow: auto;
+  background-color: var(--bs-body-bg); 
   z-index: 1020;   /* Needed for when children are positioned over the left sidebar */
                    /* Must be less than --bs-offcanvas-zindex=1045      */
 }
@@ -61,7 +62,7 @@
   left:0;
   width: 100vw;
   height: var(--footer-height);
-  background-color: #DDDDDD;
+  background-color: var(--bs-primary);
   z-index: 1021;   /* higher than page-body, hich extends behinid the footer on a small screen */
 }
 

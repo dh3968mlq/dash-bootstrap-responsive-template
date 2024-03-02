@@ -18,7 +18,8 @@ app = Dash(
     __name__, 
     use_pages=True,    # A multi-page app: https://dash.plotly.com/urls
     external_stylesheets=[
-                    dbc.themes.BOOTSTRAP,  
+                    dbc.themes.BOOTSTRAP,  # A light theme, or...
+                    #dbc.themes.DARKLY,      # ... a dark theme
                     'https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css',
     ],
 )
@@ -26,11 +27,12 @@ app._favicon = "favicon.png"            # app.title must be set page by page
 server = app.server                     # Necessary for Heroku?
 
 app.layout = corelayout.createlayout(
-    headercontents=header.create_header(),
-    leftsidebarcontents=leftsidebar.create_side_navbar(),
-    popupcontents=leftsidebar.create_navbar_drawer(),
-    rightsidebarcontents=rightsidebar.create_aside(),
-    footercontents=footer.create_footer()
+    headercontents=header.header(),
+    leftsidebarcontents=leftsidebar.side_navbar(),
+    popupcontents=leftsidebar.navbar_drawer(),
+    popuptitle=leftsidebar.popup_title(),
+    rightsidebarcontents=rightsidebar.aside(),
+    footercontents=footer.footer()
 )
 
 if __name__ == "__main__":

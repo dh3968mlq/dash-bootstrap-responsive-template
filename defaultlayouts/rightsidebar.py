@@ -1,7 +1,7 @@
 from dash import html
 from defaultlayouts.lorem import lorem
 
-def create_aside():
+def aside():
     aside = [
         html.H3("Right SideBar"),
         html.P("This sidebar disappears when screen width is below 1500px"),

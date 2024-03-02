@@ -5,6 +5,7 @@ def createlayout(
         headercontents=None,
         leftsidebarcontents=None,
         popupcontents=None,
+        popuptitle="",
         rightsidebarcontents=None,
         footercontents=None,
         header_height=50,       # Must correspond to value set in styles.css
@@ -28,6 +29,7 @@ def createlayout(
     if popupcontents is not None:
         contents.append(dbc.Offcanvas(
                 id="page-default-drawer",
+                title=popuptitle,
                 children=popupcontents,
                 style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
                     "top":f"{header_height}px",

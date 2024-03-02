@@ -31,34 +31,37 @@ layout = [
                         inline=True,
                         id='radio-buttons-final', className='bg-info rounded-1 my-2')
         ],),
-        dbc.Row([
-            dbc.Col([
-                dash_table.DataTable(
-                    data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'}
-                )
-                ],
-                md=6,
-                id='col-datatable',
-            ),
-            dbc.Col([
-                dcc.Graph(figure={}, id='my-first-graph-final')
-                ],
-                id='col-graph',
-                md=6,
-            ),
-        ],), 
+        dbc.Row(
+            [
+                dbc.Col([
+                    dash_table.DataTable(
+                        data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'},
+                    )
+                    ],
+                    md=6,
+                    id='col-datatable',
+                ),
+                dbc.Col([
+                    dcc.Graph(figure={}, id='my-first-graph-final')
+                    ],
+                    id='col-graph',
+                    md=6,
+                ),
+            ],
+            className='dbc',
+        ), 
     ], className="page-body"),
     # -- The custom pop-up drawer. Duplicates the radio buttons
     dbc.Offcanvas(
         id={"type":"drawer", "page": __name__}, # Needed for the open/close callbacks
+        title="Graph Controls",
         children=
         [
-            html.H2("Graph Controls"),
             dcc.Link("Home", href="/"),
             dbc.RadioItems(options=[{"label": x, "value": x} for x in ['pop', 'lifeExp', 'gdpPercap']],
                         value='lifeExp',
                         id='radio-buttons-popup',
-                        className="bg-info rounded-1"
+                        className="bg-info rounded-1 my-3"
             )
         ],
     ),
