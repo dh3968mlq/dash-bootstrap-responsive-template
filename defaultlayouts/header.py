@@ -33,7 +33,6 @@ def header_right_column():
                     target="_blank",
 
                 ),
-                #hamburger.hamburger(),
             ],
             className="ms-auto"     # Right aligns the content
         )

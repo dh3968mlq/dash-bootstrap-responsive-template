@@ -25,6 +25,8 @@ wraps the [Bootstrap](https://getbootstrap.com/docs/3.4/components/) components 
 * Allows flexible control of the sidebar content
     * The left sidebar can share some, all or none of its content with the pop-up that replaces it on a small screen
     * Pages can have customised left or right sidebars and/or pop-ups
+* Shows a simple Plotly interactive graph
+    * On narrow screens, controls can be moved to, or duplicated on, the pop-up sidebar 
 * Autogenerates content from Markdown files
 * Is configured for deployment on Heroku
 

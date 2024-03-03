@@ -19,7 +19,8 @@ app = Dash(
     use_pages=True,    # A multi-page app: https://dash.plotly.com/urls
     external_stylesheets=[
                     dbc.themes.BOOTSTRAP,  # A light theme, or...
-                    #dbc.themes.DARKLY,      # ... a dark theme
+                    #dbc.themes.DARKLY,      # ... a dark theme seems to work OK
+                    # dbc.themes.COSMO,     # ... but this one requires a few other changes
                     'https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css',
     ],
 )

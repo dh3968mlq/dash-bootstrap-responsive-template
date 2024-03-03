@@ -4,6 +4,9 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
+header_height = 50    
+footer_height = 30
+
 register_page(module=__name__,
               name="Sample Graph",
               title='Sample Graph')
@@ -64,6 +67,10 @@ layout = [
                         className="bg-info rounded-1 my-3"
             )
         ],
+        style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
+            "top":f"{header_height}px",
+            "bottom":f"{footer_height}px",
+        }
     ),
 ]
 # -------------------------------------------------------
