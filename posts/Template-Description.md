@@ -1,6 +1,6 @@
 ## Template Description
 
-Code on [Gitgub](https://github.com/dh3968mlq/dash-bootstrap-starter-kit)
+Code on [Gitgub](https://github.com/dh3968mlq/dash-bootstrap-responsive-template)
 
 ![Example image](/static/pexels-pixabay-147411_cropped.png)   
 

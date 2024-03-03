@@ -29,7 +29,7 @@ def header_right_column():
                         height="40px", 
                         style={"margin":"14px"}
                     ),
-                    href="https://github.com/dh3968mlq/dash-bootstrap-starter-kit",
+                    href="https://github.com/dh3968mlq/dash-bootstrap-responsive-template",
                     target="_blank",
 
                 ),

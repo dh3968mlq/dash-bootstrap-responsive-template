@@ -18,7 +18,7 @@ layout = [
                 className="text-center"  # If using html.P... "fs-4 text-center"
             ),
             html.P(
-                dbc.Button('Code on Github', href="https://github.com/dh3968mlq/dash-bootstrap-starter-kit",
+                dbc.Button('Code on Github', href="https://github.com/dh3968mlq/dash-bootstrap-responsive-template",
                     target="_blank", color="primary"),
                 className="fs-4 text-center"
             )],
