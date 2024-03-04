@@ -6,7 +6,7 @@ from dash import register_page, html, dcc
 import dash_bootstrap_components as dbc
 from defaultlayouts.lorem import lorem
 
-register_page(__name__, path='/', title='Dash Bootstrap Starter Kit') # https://dash.plotly.com/urls
+register_page(__name__, path='/', title='Dash Bootstrap Template') # https://dash.plotly.com/urls
 
 layout = [
         dbc.Container(

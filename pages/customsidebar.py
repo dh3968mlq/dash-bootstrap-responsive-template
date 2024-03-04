@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 
 register_page(module=__name__, 
               name="Page with customised sidebar",
-              title='Dash Bootstrap Starter Kit')
+              title='Dash Bootstrap Template')
 
 header_height = 50    
 footer_height = 30
