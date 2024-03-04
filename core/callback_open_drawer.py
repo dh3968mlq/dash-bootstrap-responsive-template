@@ -2,6 +2,7 @@ from dash import Input, Output, State, ALL, clientside_callback
 
 # Open the navigation drawer when the hamburger button is clicked
 # (It cannot be clicked when an OffCanvas is open)
+# Open custom drawer if one exists in the display, otherwise open the default drawer
 # Custom drawers must be give id {"type":"drawer", "page": ...}
 # https://dash.plotly.com/pattern-matching-callbacks
 

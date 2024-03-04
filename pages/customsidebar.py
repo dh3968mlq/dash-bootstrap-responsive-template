@@ -26,7 +26,7 @@ Some content here is rendered from Markdown, some (such as the image below) in P
         ],
         className='page-body'
     ),
-    # --- The custom sidebar
+    # --- The custom sidebar. Just add it to the content with a 'page-navbar' class
     html.Div(
         children=[
             html.H4("Custom sidebar layout"),

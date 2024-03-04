@@ -1,3 +1,4 @@
+/* Some of these variables are duplicated in code */
 :root {
     --navbar-width: 300px;
     --aside-width: 300px;
@@ -25,6 +26,7 @@
   width: var(--navbar-width);
   padding-right: 10px;
   padding-left: 10px;
+  border-right : 2px solid lightgray;
   background-color: var(--bs-body-bg); 
 }
 
@@ -37,21 +39,22 @@
   overflow :auto;
   padding-right: 10px;
   padding-left: 10px;
+  border-left : 2px solid lightgray;
   background-color: var(--bs-body-bg); 
 }
 
 .page-body {
   position: fixed;
-  left: var(--navbar-width); /* Position to right of navbar (~ left sidebar) */
-  right: var(--aside-width); /* Position to left of Aside (~right sidebar) */
-  top: var(--header-height); /* Position below the Header */
+  left: var(--navbar-width); 
+  right: var(--aside-width); 
+  top: var(--header-height); 
   bottom: var(--footer-height);
   padding-left: 15px;
   padding-right: 22px; /* Some space for the scroll bar */
   overflow: auto;
   background-color: var(--bs-body-bg); 
   z-index: 1020;   /* Needed for when children are positioned over the left sidebar */
-                   /* Must be less than --bs-offcanvas-zindex=1045      */
+                   /* Must be less than --bs-offcanvas-zindex=1045 and less than z-index of footer   */
 }
 
 .page-footer {
@@ -61,7 +64,7 @@
   width: 100vw;
   height: var(--footer-height);
   background-color: var(--bs-primary);
-  z-index: 1021;   /* higher than page-body, hich extends behinid the footer on a small screen */
+  z-index: 1021;   /* Higher than page-body, which extends behind the footer on a small screen */
 }
 
 /* Hide right sidebar as page narrows */
@@ -85,7 +88,7 @@
       overflow: visible;
   }
   .page-inner {
-    padding-bottom: var(--footer-height);
+    padding-bottom: var(--footer-height); /* Create space so bottom of page clears the footer */
   }
   .wide-only {
     display: None

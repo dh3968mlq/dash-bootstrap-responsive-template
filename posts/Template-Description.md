@@ -14,7 +14,7 @@ wraps the [Bootstrap](https://getbootstrap.com/docs/3.4/components/) components 
 
 * Implements a basic responsive design
 * Draws on the much more complex [code for the Dash Mantine Components Documentation](https://github.com/snehilvj/dmc-docs)
-* Is implemented entirely in Python using
+* Is implemented almost entirely in Python using
     * [Dash](https://dash.plotly.com/urls)
     * [Dash Pages](https://dash.plotly.com/urls) to create a multi-page app
     * [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)

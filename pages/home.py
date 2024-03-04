@@ -42,6 +42,9 @@ layout = [
                 ' components library'
             ]
         ),
+        html.P(
+            "The Heroku deployment may take a few seconds to wake up if using Eco Dynos"
+        ),
         html.H3('This page'),
         html.P('Is implemented in Python, using dbc components'),
         html.P([

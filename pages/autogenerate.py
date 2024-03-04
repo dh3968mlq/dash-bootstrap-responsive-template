@@ -1,5 +1,5 @@
 '''
-auto generate pages from all .md files held in ./markdown
+auto generate pages from all .md files held in ./posts
 '''
 from pathlib import Path
 from dash import register_page, dcc
