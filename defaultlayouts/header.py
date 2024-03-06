@@ -1,4 +1,4 @@
-from dash import dcc, html
+from dash import dcc, html, clientside_callback, Input, Output
 import dash_bootstrap_components as dbc
 from core import iconbuttons
 
@@ -28,7 +28,8 @@ def header_right_column():
                 children=html.Img(
                     src="/static/github-mark.svg", 
                     height="40px", 
-                    style={"margin":"14px", "fill":"var(--bs-primary)"}
+                    style={"margin":"14px", "fill":"var(--bs-primary)"},
+                    id="github-logo",
                 ),
                 href="https://github.com/dh3968mlq/dash-bootstrap-responsive-template",
                 target="_blank",
@@ -49,3 +50,14 @@ def header():
         className="page-header",
     )
     return header
+# --------------------------------------------
+clientside_callback(
+    """ 
+    function(nclicks) {
+       return (nclicks % 2) ? '/static/github-mark-white.svg' : '/static/github-mark.svg'  
+    }
+    """,
+    Output("github-logo", "src"),
+    Input("core-lightswitch", "n_clicks"),
+    prevent_initial_call = True     
+)

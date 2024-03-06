@@ -29,7 +29,7 @@ layout = [
         html.P([
             "This template has boilerplate code for a responsive site implemented in Dash Bootstrap ",
             "Components, including independently scrolling sidebars on wide screens, a popup "
-            "navigation menu on small screens, pages able to customise sidebars and light/dark theme switching"
+            "navigation menu on small screens, customisable sidebars and light/dark theme switching"
         ]),
 
         html.P(
