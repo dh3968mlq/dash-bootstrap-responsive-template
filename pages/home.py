@@ -13,7 +13,7 @@ layout = [
             [html.H3(
                 [
                     'A responsive site template using',
-                    ' Dash and Dash Bootstrap Components. ',
+                    ' Dash and Dash Bootstrap Components',
                 ],
                 className="text-center"  # If using html.P... "fs-4 text-center"
             ),
@@ -26,9 +26,14 @@ layout = [
         ),
         html.Img(src="/static/pexels-pixabay-262367-cropped2.jpg",width="100%",
                  className="mx-0 mb-3 rounded"),
+        html.P([
+            "This template has boilerplate code for a responsive site implemented in Dash Bootstrap ",
+            "Components, including independently scrolling sidebars on wide screens, a popup "
+            "navigation menu on small screens, pages able to customise sidebars and light/dark theme switching"
+        ]),
+
         html.P(
-            [
-                html.A('Dash', href="https://dash.plotly.com/", target="_blank"),
+            [   html.A('Dash', href="https://dash.plotly.com/", target="_blank"),
                 ' allows ',
                 html.A('multi-page web apps', href="https://dash.plotly.com/urls", target="_blank"),
                 ' to be programmed (almost entirely) in Python'

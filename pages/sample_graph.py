@@ -3,6 +3,7 @@ from dash import html, dash_table, dcc, callback, Output, Input, register_page, 
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
+from dash_bootstrap_templates import load_figure_template
 
 header_height = 50    
 footer_height = 30
@@ -10,6 +11,8 @@ footer_height = 30
 register_page(module=__name__,
               name="Sample Graph",
               title='Sample Graph')
+
+load_figure_template(["bootstrap", "bootstrap_dark"])
 
 # Incorporate data
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
@@ -81,9 +84,11 @@ layout = [
     Output('radio-buttons-popup', 'value'),
     Input('radio-buttons-final', 'value'),
     Input('radio-buttons-popup', 'value'),
+    Input("core-lightswitch", "n_clicks"),
 )
-def update_graph(col_body, col_popup):
+def update_graph(col_body, col_popup, nclicks):
     trigger = ctx.triggered_id
     col_chosen = col_body if trigger == 'radio-buttons-final' else col_popup
-    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
+    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg', 
+                       template="bootstrap_dark" if nclicks % 2 else "bootstrap")
     return fig, col_chosen, col_chosen

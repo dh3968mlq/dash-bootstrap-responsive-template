@@ -11,6 +11,7 @@ from defaultlayouts import header, leftsidebar, rightsidebar, footer
 
 from core import callback_close_drawer   # The import defines the callback, no need to reference it
 from core import callback_open_drawer
+from core import callback_lightswitch
 
 # -- For dbc.themes... details see https://bootswatch.com/
 # -- dbc.min.css provides additional styles for Dash components. See https://hellodash.pythonanywhere.com/

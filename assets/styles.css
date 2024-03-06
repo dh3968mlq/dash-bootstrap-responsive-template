@@ -12,7 +12,8 @@
   left:0;
   width: 100vw;
   height: var(--header-height);
-  background-color: var(--bs-primary);
+  background-color: var(--bs-body-bg);
+  /* border-bottom : 2px solid lightgray; */
   z-index: 1021;   /* higher than page-body */
   padding-right: 12px;   /* To avoid scrollbar on small screens */
 }
@@ -63,7 +64,8 @@
   left:0;
   width: 100vw;
   height: var(--footer-height);
-  background-color: var(--bs-primary);
+  background-color: var(--bs-body-bg);
+  /* border-top : 2px solid lightgray; */
   z-index: 1021;   /* Higher than page-body, which extends behind the footer on a small screen */
 }
 

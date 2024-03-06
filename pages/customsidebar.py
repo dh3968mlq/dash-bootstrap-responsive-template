@@ -15,7 +15,7 @@ layout = [
 
 ## A page with a custom sidebar
 
-An example page that has a custom sidebar and pop-up drawer
+An example page that has a custom sidebar and pop-up drawer.
                          
 Some content here is rendered from Markdown, some (such as the image below) in Python
 
