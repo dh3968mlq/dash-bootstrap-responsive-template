@@ -3,20 +3,20 @@ import dash_bootstrap_components as dbc
 from core import iconbuttons
 
 def home_link(label):
-        return dcc.Link(
-            label,
-            href="/",
-            style={"color":"var(--bs-body-color)", "textDecoration":"none"}
-        )
+    link = dcc.Link(
+        label,
+        href="/",
+        style={"color":"var(--bs-body-color)", "textDecoration":"none"}
+    )
+    return link
 # --------------------------------------------
 def header_left_column():
-    hl = dbc.Stack(
+    hl = html.Span(
         [                   
             iconbuttons.hamburger(),
-            html.H2(home_link("Dash Bootstrap Responsive Template"), className="wide-only ms-2"), 
-            html.H3(home_link("DBC Template"), className="narrow-only ms-2"), 
+            html.Span(home_link("Dash Bootstrap Responsive Template"), className="fs-2 wide-only ms-2"), 
+            html.Span(home_link("DBC Template"), className="fs-3 narrow-only ms-2"), 
         ],
-        direction="horizontal"
     )
     return hl
 # --------------------------------------------
