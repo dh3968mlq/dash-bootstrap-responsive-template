@@ -14,12 +14,14 @@ from core import callback_open_drawer
 from core import callback_lightswitch
 
 # -- For dbc.themes... details see https://bootswatch.com/
+# -- For dbc icons: https://dash-bootstrap-components.opensource.faculty.ai/docs/icons/
 # -- dbc.min.css provides additional styles for Dash components. See https://hellodash.pythonanywhere.com/
 app = Dash(
     __name__, 
     use_pages=True,    # A multi-page app: https://dash.plotly.com/urls
     external_stylesheets=[
                     dbc.themes.BOOTSTRAP,
+                    dbc.icons.BOOTSTRAP,  
                     'https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css',
     ],
 )

@@ -27,7 +27,7 @@ layout = [
         html.Img(src="/static/pexels-pixabay-262367-cropped2.jpg",width="100%",
                  className="mx-0 mb-3 rounded"),
         html.P([
-            "This template has boilerplate code for a responsive site implemented in Dash Bootstrap ",
+            "This template has open source (MIT License) boilerplate code for a responsive site implemented in Dash Bootstrap ",
             "Components, including independently scrolling sidebars on wide screens, a popup "
             "navigation menu on small screens, customisable sidebars and light/dark theme switching"
         ]),

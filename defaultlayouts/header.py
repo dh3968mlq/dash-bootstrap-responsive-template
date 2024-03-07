@@ -21,21 +21,16 @@ def header_left_column():
     return hl
 # --------------------------------------------
 def header_right_column():
-    hr = dbc.Stack(
+    github_icon = dcc.Link(
+        html.I(className="bi bi-github fs-1", id="github-logo"),
+        href="https://github.com/dh3968mlq/dash-bootstrap-responsive-template",
+        target="_blank",
+    )
+    hr = html.Span(
         children=[
             iconbuttons.lightswitch(),
-            dcc.Link(
-                children=html.Img(
-                    src="/static/github-mark.svg", 
-                    height="40px", 
-                    style={"margin":"14px", "fill":"var(--bs-primary)"},
-                    id="github-logo",
-                ),
-                href="https://github.com/dh3968mlq/dash-bootstrap-responsive-template",
-                target="_blank",
-            ),
+            github_icon,
         ],
-        direction="horizontal",
         className="ms-auto"     # Right aligns the content
     )
     return hr
@@ -50,14 +45,3 @@ def header():
         className="page-header",
     )
     return header
-# --------------------------------------------
-clientside_callback(
-    """ 
-    function(nclicks) {
-       return (nclicks % 2) ? '/static/github-mark-white.svg' : '/static/github-mark.svg'  
-    }
-    """,
-    Output("github-logo", "src"),
-    Input("core-lightswitch", "n_clicks"),
-    prevent_initial_call = True     
-)

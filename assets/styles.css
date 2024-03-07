@@ -13,7 +13,6 @@
   width: 100vw;
   height: var(--header-height);
   background-color: var(--bs-body-bg);
-  /* border-bottom : 2px solid lightgray; */
   z-index: 1021;   /* higher than page-body */
   padding-right: 12px;   /* To avoid scrollbar on small screens */
 }
@@ -65,7 +64,6 @@
   width: 100vw;
   height: var(--footer-height);
   background-color: var(--bs-body-bg);
-  /* border-top : 2px solid lightgray; */
   z-index: 1021;   /* Higher than page-body, which extends behind the footer on a small screen */
 }
 
@@ -84,9 +82,12 @@
   .page-navbar {
       display: none;
   }
+  /* Use the browser's scrollbar on a small screen. 
+     If overflow:scroll or overflow:auto were to be used then (at least on Safari on an iPhone)
+     the navigation bar is always visible and occupying screen space, while this way it can disappear */
   .page-body {
       left: 0;
-      position: absolute;  /* Use the browser's scrollbar on a small screen */
+      position: absolute;  
       overflow: visible;
   }
   .page-inner {

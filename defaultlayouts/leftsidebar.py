@@ -52,7 +52,7 @@ def side_navbar():
     ] + side_nav_content(idprefix="bar")
     return contents
 # --------------------------------------------
-def navbar_drawer(header_height=70, footer_height = 40):
+def navbar_drawer():
     contents = [
             html.P("Uses dbc.Offcanvas"),
             html.P("This drawer becomes available when screen width is below 1200px"),
