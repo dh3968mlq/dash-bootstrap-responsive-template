@@ -1,12 +1,10 @@
 from dash import register_page, dcc, html
 import dash_bootstrap_components as dbc
+from defaultlayouts import globalconstants
 
 register_page(module=__name__, 
               name="Page with customised sidebar",
               title='Dash Bootstrap Template')
-
-header_height = 50    
-footer_height = 30
 
 layout = [
     html.Div(
@@ -47,8 +45,8 @@ Some content here is rendered from Markdown, some (such as the image below) in P
             dcc.Link("Home", href="/"),
         ],
         style={   # Styling .page-navbar in CSS doesn't seem to work to do this...
-            "top":f"{header_height}px",
-            "bottom":f"{footer_height}px",
+            "top":f"{globalconstants.header_height}px",
+            "bottom":f"{globalconstants.footer_height}px",
         }
     ),
     # -- Custom right sidebar. This just hides the default

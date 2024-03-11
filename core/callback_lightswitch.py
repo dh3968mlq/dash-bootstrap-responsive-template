@@ -8,10 +8,11 @@ clientside_callback(
     """ 
     function(nclicks) {
        document.documentElement.setAttribute('data-bs-theme', (nclicks % 2) ? 'dark' : 'light');
-       return window.dash_clientside.no_update  
+       return (nclicks % 2) ? [true, 'dark'] : [false, 'light']
     }
     """,
-    Output("core-lightswitch", "n_clicks"),
+    Output("main-navbar", "dark"),   # It looks like the light/dark switching needs to be done explicitly for a navBar
+    Output("main-navbar", "color"),  # Ditto
     Input("core-lightswitch", "n_clicks"),
     prevent_initial_call = True
 )

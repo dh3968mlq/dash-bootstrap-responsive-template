@@ -1,6 +1,8 @@
 import dash_bootstrap_components as dbc
 from dash import html, page_container, dcc
 
+from defaultlayouts import globalconstants
+
 def createlayout(
         headercontents=None,
         leftsidebarcontents=None,
@@ -8,8 +10,8 @@ def createlayout(
         popuptitle="",
         rightsidebarcontents=None,
         footercontents=None,
-        header_height=50,       # Must correspond to value set in styles.css
-        footer_height = 30,      # Ditto
+        header_height=globalconstants.header_height,       # Must correspond to value set in styles.css
+        footer_height = globalconstants.footer_height,      # Ditto
         ):
     contents = [
             html.Div(children=headercontents, className="page-header"),

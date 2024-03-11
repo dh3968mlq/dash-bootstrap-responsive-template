@@ -1,8 +1,8 @@
-/* Some of these variables are duplicated in code */
+/* Some of these variables are duplicated in globalconstants.py */
 :root {
     --navbar-width: 300px;
     --aside-width: 300px;
-    --header-height: 50px;
+    --header-height: 70px;
     --footer-height: 30px;
   }
 
@@ -91,6 +91,7 @@
       overflow: visible;
   }
   .page-inner {
+    /* padding-top: var(--header-height); */ /* Create space so bottom of page clears the footer */
     padding-bottom: var(--footer-height); /* Create space so bottom of page clears the footer */
   }
   .wide-only {
